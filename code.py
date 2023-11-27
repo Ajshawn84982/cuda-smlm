@@ -1114,7 +1114,7 @@ if __name__=="__main__":
         #channel_roughalign = pickle.load( open( "channel_roughalign.p", "rb" ) )
         ROI=11
         #fn="C:/Users/localadmin/Downloads/OneDrive_1_8-1-2023/ExperimentalData/20210408_2ColorSTORM/aTub_A647_30ms_100LP_15x_1/aTub_A647_30ms_100LP_15x_1_MMStack_Default.tif"
-        fn="C:/research/DMD-SIMFLUX/channel_transform/test1/cos7.tiff"
+        fn="./data/crop.tif"
         imgarr=imread(fn).astype(np.float64)
         img_ch1=(imgarr[1:2000]).astype(np.float32)
 
@@ -1166,4 +1166,4 @@ if __name__=="__main__":
                     result_filter.append([result[i,0],result[i,1],result[i,2],result[i,3],result[i,4],result[i,4],result[i,5],np.sqrt(result[i,7]**2+result[i,8]**2)])
     
             result_filter=np.asarray(result_filter)
-            np.savetxt("localization_result_cos7_v2.csv", result_filter, delimiter=',', header="xnm,ynm,I,bg,sigmax,sigmax,frame,locprenm")
+            np.savetxt("./result/localization_result_cos7_v1.csv", result_filter, delimiter=',', header="xnm,ynm,I,bg,sigmax,sigmax,frame,locprenm")
